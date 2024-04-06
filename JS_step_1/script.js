@@ -40,5 +40,6 @@ const personalMovieDB = {
 	privat: false
 };
 
+
 console.log(personalMovieDB);
 
