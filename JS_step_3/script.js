@@ -37,7 +37,7 @@ function rememberMyFilms() {
 	for (let i = 0; i < 2; i++) {
 		let q1, q2;
 		do {
-			q1 = prompt('Один из последних просмотренных фильмов?', '');
+			q1 = prompt('Один из последних просмотренных фильмов?', '').trim();
 			q2 = +prompt('На сколько оцените его?', '');
 		} while (q1 === '' || isNaN(q2) || q1 === null || q2 === 0 || 50 < q1.length);
 		personalMovieDB.movies[q1] = q2;
