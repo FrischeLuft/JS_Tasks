@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
-	sliderContainer.style.transform = `translateX(0px)`;
+	sliderContainer.style.transform = 'translateX(0px)';
 	dots[0].classList.add('active');
 
 });
