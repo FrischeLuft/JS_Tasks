@@ -156,4 +156,4 @@ function calculating() {
 	}
 }
 
-module.exports = calculating;
+export default calculating;

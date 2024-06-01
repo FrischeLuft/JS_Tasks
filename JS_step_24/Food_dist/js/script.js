@@ -1,18 +1,31 @@
+import calculating from './modules/calculating';
+import forms from './modules/forms';
+import modal from './modules/modal';
+import slider from './modules/slider';
+import tabs from './modules/tabs';
+import timer from './modules/timer';
+import cards from './modules/cards';
+import { openModal } from './modules/modal';
+
 window.addEventListener('DOMContentLoaded', () => {
-	const calculating = require('./modules/calculating'),
-		forms = require('./modules/forms'),
-		modal = require('./modules/modal'),
-		slider = require('./modules/slider'),
-		tabs = require('./modules/tabs'),
-		timer = require('./modules/timer'),
-		cards = require('./modules/cards');
+
+	const modalTimerId = setTimeout(() => openModal('.modal', modalTimerId), 50000);
 
 	calculating();
-	forms();
-	modal();
-	slider();
-	tabs();
-	timer();
+	forms('form', modalTimerId);
+	modal('[data-modal]', '.modal', modalTimerId);
+	slider({
+		container: '.offer__slider',
+		slide: '.offer__slide',
+		nextArrow: '.offer__slider-next',
+		prevArrow: '.offer__slider-prev',
+		totalCounter: '#total',
+		currentCounter: '#current',
+		wrapper: '.offer__slider-wrapper',
+		field: '.offer__slider-inner'
+	});
+	tabs('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
+	timer('.timer', '2025-06-11');
 	cards();
 });
 
